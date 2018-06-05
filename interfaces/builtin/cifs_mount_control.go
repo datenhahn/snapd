@@ -34,6 +34,7 @@ const cifsMountControlConnectedPlugSecComp = `
 
 mount
 umount
+umount2
 `
 
 const cifsMountControlConnectedPlugAppArmor = `
@@ -52,6 +53,8 @@ umount fstype=cifs /home/*/snap/@{SNAP_NAME}/@{SNAP_REVISION}/{,**/},
 umount fstype=cifs /var/snap/@{SNAP_NAME}/@{SNAP_REVISION}/{,**/},
 umount fstype=cifs /home/*/snap/@{SNAP_NAME}/common/{,**/},
 umount fstype=cifs /var/snap/@{SNAP_NAME}/common/{,**/},
+
+/run/mount/utab rw,
 `
 
 func init() {
